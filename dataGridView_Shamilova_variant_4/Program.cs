@@ -1,8 +1,10 @@
 ﻿using System;
+using dataGridView.Framework.TourManager;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dataGridView.Framework.TourStorage;
 
 namespace dataGridView_Shamilova_variant_4
 {
@@ -16,7 +18,10 @@ namespace dataGridView_Shamilova_variant_4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var storage = new TourStorage();
+            var manager = new TourManager(storage);
+
+            Application.Run(new MainForm(manager));
         }
     }
 }

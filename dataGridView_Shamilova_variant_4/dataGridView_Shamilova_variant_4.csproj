@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,14 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bindings\DateGenerate.cs" />
+    <Compile Include="Bindings\Extensions.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TourForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TourForm.Designer.cs">
+      <DependentUpon>TourForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TourForm.resx">
+      <DependentUpon>TourForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +91,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dataGridView.Framework.Contracts\dataGridView.Framework.Contracts.csproj">
+      <Project>{09663d9d-5d74-418d-8150-ad5915bae85b}</Project>
+      <Name>dataGridView.Framework.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dataGridView.Framework.Tour.Manager\dataGridView.Framework.TourManager.csproj">
+      <Project>{ecff6337-5dfa-413a-a595-5dc471282353}</Project>
+      <Name>dataGridView.Framework.TourManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dataGridView.Framework.Tour.Storage\dataGridView.Framework.TourStorage.csproj">
+      <Project>{2c4c7f74-3811-475f-800c-f3db9953164c}</Project>
+      <Name>dataGridView.Framework.TourStorage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
