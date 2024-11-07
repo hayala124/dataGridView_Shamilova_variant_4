@@ -1,10 +1,7 @@
 ﻿using System;
-using dataGridView.Framework.TourManager;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using dataGridView.Standart.TourManager;
 using System.Windows.Forms;
-using dataGridView.Framework.TourStorage;
+using dataGridView.Standart.TourStorage;
 
 namespace dataGridView_Shamilova_variant_4
 {
@@ -16,6 +13,9 @@ namespace dataGridView_Shamilova_variant_4
         [STAThread]
         static void Main()
         {
+            //var factory = LoggerFactory.Create(builder => builder.AddDebug());
+            //var logger = factory.CreateLogger("LastMinuteTours");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var storage = new TourStorage();

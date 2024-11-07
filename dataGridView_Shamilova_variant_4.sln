@@ -5,16 +5,16 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataGridView_Shamilova_variant_4", "dataGridView_Shamilova_variant_4\dataGridView_Shamilova_variant_4.csproj", "{30F2A342-837F-460C-890A-33D0385930DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataGridView.Framework.Contracts", "dataGridView.Framework.Contracts\dataGridView.Framework.Contracts.csproj", "{09663D9D-5D74-418D-8150-AD5915BAE85B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataGridView.Framework.TourManager", "dataGridView.Framework.Tour.Manager\dataGridView.Framework.TourManager.csproj", "{ECFF6337-5DFA-413A-A595-5DC471282353}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataGridView.Framework.TourStorage", "dataGridView.Framework.Tour.Storage\dataGridView.Framework.TourStorage.csproj", "{2C4C7F74-3811-475F-800C-F3DB9953164C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{6377CCB2-6CD4-4DF4-9181-85A227B4AB56}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Downloads\editorconfig = ..\..\..\Downloads\editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataGridView.Standart.Contracts", "dataGridView.Standart.Contracts\dataGridView.Standart.Contracts.csproj", "{E800822B-17A8-4327-9EBF-349653A14CE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataGridView.Standart.TourManager", "dataGridView.Standart.TourManager\dataGridView.Standart.TourManager.csproj", "{AAE7BB79-774E-4742-91C1-B313D0D82282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataGridView.Standart.TourStorage", "dataGridView.Standart.TourStorage\dataGridView.Standart.TourStorage.csproj", "{EE320A63-1072-41E5-B4E2-76DC6DAC6496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,18 +26,18 @@ Global
 		{30F2A342-837F-460C-890A-33D0385930DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30F2A342-837F-460C-890A-33D0385930DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30F2A342-837F-460C-890A-33D0385930DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09663D9D-5D74-418D-8150-AD5915BAE85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09663D9D-5D74-418D-8150-AD5915BAE85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09663D9D-5D74-418D-8150-AD5915BAE85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09663D9D-5D74-418D-8150-AD5915BAE85B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ECFF6337-5DFA-413A-A595-5DC471282353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ECFF6337-5DFA-413A-A595-5DC471282353}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ECFF6337-5DFA-413A-A595-5DC471282353}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ECFF6337-5DFA-413A-A595-5DC471282353}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C4C7F74-3811-475F-800C-F3DB9953164C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C4C7F74-3811-475F-800C-F3DB9953164C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C4C7F74-3811-475F-800C-F3DB9953164C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C4C7F74-3811-475F-800C-F3DB9953164C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E800822B-17A8-4327-9EBF-349653A14CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E800822B-17A8-4327-9EBF-349653A14CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E800822B-17A8-4327-9EBF-349653A14CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E800822B-17A8-4327-9EBF-349653A14CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE7BB79-774E-4742-91C1-B313D0D82282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE7BB79-774E-4742-91C1-B313D0D82282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE7BB79-774E-4742-91C1-B313D0D82282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE7BB79-774E-4742-91C1-B313D0D82282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE320A63-1072-41E5-B4E2-76DC6DAC6496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE320A63-1072-41E5-B4E2-76DC6DAC6496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE320A63-1072-41E5-B4E2-76DC6DAC6496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE320A63-1072-41E5-B4E2-76DC6DAC6496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

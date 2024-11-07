@@ -1,6 +1,6 @@
-﻿using dataGridView.Framework.Contracts;
-using dataGridView.Framework.Contracts.Models;
-using dataGridView_Shamilova_variant_4.Forms;
+﻿using dataGridView_Shamilova_variant_4.Forms;
+using dataGridView.Standart.Contracts;
+using dataGridView.Standart.Contracts.Models;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +14,7 @@ namespace dataGridView_Shamilova_variant_4
     {
         private ITourManager tourManager;
         private BindingSource bindingSource;
+        //private TourManager manager;
 
         /// <summary>
         /// Инициализирует новый экземпляр <see cref="MainForm" />
@@ -21,7 +22,7 @@ namespace dataGridView_Shamilova_variant_4
         public MainForm(ITourManager tourManager)
         {
             this.tourManager = tourManager;
-            this.bindingSource = new BindingSource();
+            bindingSource = new BindingSource();
 
             InitializeComponent();
 
@@ -29,6 +30,10 @@ namespace dataGridView_Shamilova_variant_4
             dataGridViewTours.DataSource = bindingSource;
         }
 
+        //public MainForm(TourManager manager)
+        //{
+        //    this.manager = manager;
+        //}
         private async void toolStripButtonAdd_Click(object sender, EventArgs e)
         {
             var tourForm = new TourForm();
@@ -47,6 +52,7 @@ namespace dataGridView_Shamilova_variant_4
             {
                 var data = (Tour)dataGridViewTours.Rows[dataGridViewTours.SelectedRows[0].Index].DataBoundItem;
                 var tourForm = new TourForm(data);
+
                 if (tourForm.ShowDialog(this) == DialogResult.OK)
                 {
                     await tourManager.EditAsync(tourForm.Tour);

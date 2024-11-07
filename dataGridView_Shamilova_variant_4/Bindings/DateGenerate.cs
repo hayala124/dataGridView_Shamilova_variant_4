@@ -1,6 +1,6 @@
-﻿using dataGridView.Framework.Contracts.Models;
-using System;
-
+﻿using System;
+using dataGridView.Standart.Contracts.Models;
+ 
 namespace dataGridView_Shamilova_variant_4.Bindings
 {
     internal class DateGenerate
