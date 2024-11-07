@@ -1,9 +1,9 @@
-﻿using dataGridView.Framework.Contracts.Models;
+﻿using dataGridView.Standart.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace dataGridView.Framework.Contracts
+namespace dataGridView.Standart.Contracts
 {
     /// <summary>
     /// Интерфейс для хранения и управления турами.

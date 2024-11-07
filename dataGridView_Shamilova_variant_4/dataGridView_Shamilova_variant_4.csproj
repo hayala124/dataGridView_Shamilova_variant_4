@@ -93,20 +93,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dataGridView.Framework.Contracts\dataGridView.Framework.Contracts.csproj">
-      <Project>{09663d9d-5d74-418d-8150-ad5915bae85b}</Project>
-      <Name>dataGridView.Framework.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\dataGridView.Framework.Tour.Manager\dataGridView.Framework.TourManager.csproj">
-      <Project>{ecff6337-5dfa-413a-a595-5dc471282353}</Project>
-      <Name>dataGridView.Framework.TourManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\dataGridView.Framework.Tour.Storage\dataGridView.Framework.TourStorage.csproj">
-      <Project>{2c4c7f74-3811-475f-800c-f3db9953164c}</Project>
-      <Name>dataGridView.Framework.TourStorage</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +100,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dataGridView.Standart.Contracts\dataGridView.Standart.Contracts.csproj">
+      <Project>{e800822b-17a8-4327-9ebf-349653a14ce4}</Project>
+      <Name>dataGridView.Standart.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dataGridView.Standart.TourManager\dataGridView.Standart.TourManager.csproj">
+      <Project>{aae7bb79-774e-4742-91c1-b313d0d82282}</Project>
+      <Name>dataGridView.Standart.TourManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dataGridView.Standart.TourStorage\dataGridView.Standart.TourStorage.csproj">
+      <Project>{ee320a63-1072-41e5-b4e2-76dc6dac6496}</Project>
+      <Name>dataGridView.Standart.TourStorage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

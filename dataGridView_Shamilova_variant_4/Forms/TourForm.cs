@@ -1,4 +1,4 @@
-﻿using dataGridView.Framework.Contracts.Models;
+﻿using dataGridView.Standart.Contracts.Models;
 using dataGridView_Shamilova_variant_4.Bindings;
 using System;
 using System.ComponentModel;
@@ -19,6 +19,8 @@ namespace dataGridView_Shamilova_variant_4.Forms
         /// </summary>
         public TourForm(Tour tour = null)
         {
+            InitializeComponent();
+
             this.tour = tour == null
                ? DateGenerate.CreateTour(x =>
                {
@@ -37,7 +39,6 @@ namespace dataGridView_Shamilova_variant_4.Forms
                    Surcharges = tour.Surcharges,
                };
 
-            InitializeComponent();
 
             foreach (var item in Enum.GetValues(typeof(Direction)))
             {

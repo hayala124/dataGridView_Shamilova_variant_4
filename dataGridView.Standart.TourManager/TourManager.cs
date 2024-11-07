@@ -1,12 +1,11 @@
-﻿using dataGridView.Framework.Contracts;
-using dataGridView.Framework.Contracts.Models;
-using dataGridView.Framework.TourManager.Models;
+﻿using dataGridView.Standart.Contracts;
+using dataGridView.Standart.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dataGridView.Framework.TourManager
+namespace dataGridView.Standart.TourManager
 {
     public class TourManager: ITourManager
     {
@@ -56,6 +55,13 @@ namespace dataGridView.Framework.TourManager
         public async Task<ITourStats> GetStatsAsync()
         {
             var result = await tourStorage.GetAllAsync();
+
+            //new
+            foreach (var tour in result)
+            {
+                tour.TotalCost = tour.CostVacationer * tour.NumberOfVacationer + tour.Surcharges;
+            }
+
             return new TourStatsModel
             {
                 TotalCountTours = result.Count,

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace dataGridView.Framework.Contracts.Models
+namespace dataGridView.Standart.Contracts.Models
 {
     /// <summary>
     /// Туры.
@@ -9,8 +8,6 @@ namespace dataGridView.Framework.Contracts.Models
     public class Tour
     {
         public Guid Id { get; set; }
-
-        [Required]
 
         /// <inheritdoc cref="Models.Direction"
         public Direction Direction { get; set; }

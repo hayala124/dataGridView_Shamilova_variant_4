@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using dataGridView.Framework.Contracts;
-using dataGridView.Framework.Contracts.Models;
+using dataGridView.Standart.Contracts;
+using dataGridView.Standart.Contracts.Models;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dataGridView.Framework.TourStorage
+namespace dataGridView.Standart.TourStorage
 {
     public class TourStorage : ITourStorage
     {
@@ -37,7 +37,7 @@ namespace dataGridView.Framework.TourStorage
         public Task EditAsync(Tour tour)
         {
             var target = tours.FirstOrDefault(x => x.Id == tour.Id);
-            if (tour != null)
+            if (target != null)
             {
                 target.Direction = tour.Direction;
                 target.DepartureDate = tour.DepartureDate;

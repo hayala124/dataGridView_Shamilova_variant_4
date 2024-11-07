@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageId>hayala124.dataGridView_Shamilov_variant_4.DataGrid.Standart.TourStorage</PackageId>
+    <Title>dataGridView TourStorage</Title>	
+    <Version>1.0.0</Version>
+    <Authors>Hayala</Authors>
+    <Company>PKGH</Company>
+    <RepositoryUrl>https://github.com/hayala124/dataGridView_Shamilova_variant_4</RepositoryUrl>
+    <Description>creating and uploading a nuget package</Description>
+	<PackageTags>data-grid tour-storage</PackageTags>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dataGridView.Standart.Contracts\dataGridView.Standart.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

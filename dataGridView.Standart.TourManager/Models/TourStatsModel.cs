@@ -1,6 +1,6 @@
-﻿using dataGridView.Framework.Contracts.Models;
+﻿using dataGridView.Standart.Contracts.Models;
 
-namespace dataGridView.Framework.TourManager.Models
+namespace dataGridView.Standart.TourManager
 {
     /// <summary>
     /// Модель, содержащая статические данные о турах.
