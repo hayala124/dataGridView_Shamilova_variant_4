@@ -15,8 +15,4 @@
 
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\dataGridView.Standart.Contracts\dataGridView.Standart.Contracts.csproj" />
-  </ItemGroup>
-
 </Project>
