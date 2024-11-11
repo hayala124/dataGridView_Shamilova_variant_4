@@ -32,7 +32,7 @@ namespace dataGridView.TourManager
             stopwatch.Start();
             var result = await tourStorage.AddAsync(tour);
             stopwatch.Stop();
-            logger.LogInformation($"В {DateTime.Now} добален тур с id = {tour.Id} за {stopwatch.ElapsedMilliseconds} мс");
+            logger.LogInformation($"В {DateTime.Now} добавлен тур с id = {tour.Id} за {stopwatch.ElapsedMilliseconds} мс");
 
             return result;
         }
