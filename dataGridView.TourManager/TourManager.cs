@@ -1,21 +1,24 @@
-﻿using dataGridView.Standart.Contracts;
-using dataGridView.Standart.Contracts.Models;
+﻿using dataGridView.Contracts;
+using dataGridView.Contracts.Models;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dataGridView.Standart.TourManager
+namespace dataGridView.TourManager
 {
-    public class TourManager: ITourManager
+    /// <inheritdoc cref="ITourManager"/>
+    public class TourManager : ITourManager
     {
-        private ITourStorage tourStorage;
+        private readonly ITourStorage tourStorage;
+        private readonly ILogger logger;
 
-        /// <summary>
-        /// Принимает объект tourStorage и сохраняет его в поле tourStorage.
-        /// </summary>
-        public TourManager(ITourStorage tourStorage)
+        /// <summary>ctor</summary>
+        public TourManager(ITourStorage tourStorage, ILogger logger)
         {
+            this.logger = logger;
             this.tourStorage = tourStorage;
         }
 
@@ -24,39 +27,59 @@ namespace dataGridView.Standart.TourManager
         /// </summary>
         public async Task<Tour> AddAsync(Tour tour)
         {
+            var stopwatch = new Stopwatch();
+
+            stopwatch.Start();
             var result = await tourStorage.AddAsync(tour);
-            tour.TotalCost = tour.CostVacationer * tour.NumberOfVacationer + tour.Surcharges;
-            
+            stopwatch.Stop();
+            logger.LogInformation($"В {DateTime.Now} добавлен тур с id = {tour.Id} за {stopwatch.ElapsedMilliseconds} мс");
+
             return result;
         }
 
         /// <summary>
         /// Метод для удаления тура.
         /// </summary>
-        public async Task<bool> DeleteAsync(Guid id)
+        async Task<bool> ITourManager.DeleteAsync(Guid id)
         {
+            var stopwatch = new Stopwatch();
+
+            stopwatch.Start();
             var result = await tourStorage.DeleteAsync(id);
+            stopwatch.Stop();
+
+            logger.LogInformation($"В {DateTime.Now} удалён тур с id = {id} за {stopwatch.ElapsedMilliseconds} мс");
+
             return result;
         }
 
         /// <summary>
         /// Метод для редактирования тура. 
         /// </summary>
-        public Task EditAsync(Tour tour) => tourStorage.EditAsync(tour);
+        Task ITourManager.EditAsync(Tour tour)
+        {
+            var stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            var result = tourStorage.EditAsync(tour);
+            stopwatch.Stop();
+            logger.LogInformation($"В {DateTime.Now} изменён тур с id = {tour.Id} за {stopwatch.ElapsedMilliseconds} мс");
+
+            return result;
+        }
 
         /// <summary>
         /// Метод для возврата тура.
         /// </summary>
-        public Task<IReadOnlyCollection<Tour>> GetAllAsync() => tourStorage.GetAllAsync();
+        Task<IReadOnlyCollection<Tour>> ITourManager.GetAllAsync() => tourStorage.GetAllAsync();
 
         /// <summary>
         /// Метод для возврата статистики о турах.
         /// </summary>
-        public async Task<ITourStats> GetStatsAsync()
+        async Task<ITourStats> ITourManager.GetStatsAsync()
         {
             var result = await tourStorage.GetAllAsync();
 
-            //new
             foreach (var tour in result)
             {
                 tour.TotalCost = tour.CostVacationer * tour.NumberOfVacationer + tour.Surcharges;

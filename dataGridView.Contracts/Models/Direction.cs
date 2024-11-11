@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace dataGridView.Standart.Contracts.Models
+namespace dataGridView.Contracts.Models
 {
     /// <summary>
     /// Направление

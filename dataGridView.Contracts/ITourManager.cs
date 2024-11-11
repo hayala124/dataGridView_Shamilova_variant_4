@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using dataGridView.Standart.Contracts.Models;
+using dataGridView.Contracts.Models;
 
-namespace dataGridView.Standart.Contracts
+namespace dataGridView.Contracts
 {
     /// <summary>
-    /// Интерфейс для управления турами.
+    /// Управление турами.
     /// </summary>
     public interface ITourManager
     {

@@ -1,6 +1,6 @@
 ﻿using dataGridView_Shamilova_variant_4.Forms;
-using dataGridView.Standart.Contracts;
-using dataGridView.Standart.Contracts.Models;
+using dataGridView.Contracts;
+using dataGridView.Contracts.Models;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;

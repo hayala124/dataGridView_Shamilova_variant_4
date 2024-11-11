@@ -1,5 +1,5 @@
 ﻿using System;
-using dataGridView.Standart.Contracts.Models;
+using dataGridView.Contracts.Models;
  
 namespace dataGridView_Shamilova_variant_4.Bindings
 {

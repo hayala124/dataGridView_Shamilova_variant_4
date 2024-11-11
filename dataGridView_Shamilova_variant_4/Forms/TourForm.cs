@@ -1,4 +1,4 @@
-﻿using dataGridView.Standart.Contracts.Models;
+﻿using dataGridView.Contracts.Models;
 using dataGridView_Shamilova_variant_4.Bindings;
 using System;
 using System.ComponentModel;
@@ -13,6 +13,7 @@ namespace dataGridView_Shamilova_variant_4.Forms
     public partial class TourForm : Form
     {
         private Tour tour;
+        public Tour Tour => tour;
 
         /// <summary>
         /// Инициализация формы для работы с турами.
@@ -22,11 +23,7 @@ namespace dataGridView_Shamilova_variant_4.Forms
             InitializeComponent();
 
             this.tour = tour == null
-               ? DateGenerate.CreateTour(x =>
-               {
-                   x.Direction = Direction.Turkish;
-                   x.DepartureDate = DateTime.Now;
-               })
+               ? DateGenerate.CreateTour()
                : new Tour
                {
                    Id = tour.Id,
@@ -38,7 +35,6 @@ namespace dataGridView_Shamilova_variant_4.Forms
                    WiFi = tour.WiFi,
                    Surcharges = tour.Surcharges,
                };
-
 
             foreach (var item in Enum.GetValues(typeof(Direction)))
             {
@@ -58,8 +54,6 @@ namespace dataGridView_Shamilova_variant_4.Forms
             checkBoxWiFi.AddBinding(x => x.Checked, this.tour, x => x.WiFi, errorProvider1);
             numericUpDownSurcharges.AddBinding(x => x.Value, this.tour, x => x.Surcharges, errorProvider1);
         }
-
-        public Tour Tour => tour;
 
         private void comboBoxDirection_DrawItem(object sender, DrawItemEventArgs e)
         {

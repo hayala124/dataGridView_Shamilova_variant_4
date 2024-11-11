@@ -1,4 +1,4 @@
-﻿namespace dataGridView.Standart.Contracts.Models
+﻿namespace dataGridView.Contracts.Models
 {
     /// <summary>
     /// Интерфейс для получения статистики по турам.

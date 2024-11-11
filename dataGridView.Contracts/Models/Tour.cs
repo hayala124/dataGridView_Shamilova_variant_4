@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace dataGridView.Standart.Contracts.Models
+namespace dataGridView.Contracts.Models
 {
     /// <summary>
     /// Туры.
@@ -9,7 +9,7 @@ namespace dataGridView.Standart.Contracts.Models
     {
         public Guid Id { get; set; }
 
-        /// <inheritdoc cref="Models.Direction"
+        /// <inheritdoc cref="Models.Direction"/>
         public Direction Direction { get; set; }
 
         /// <summary>
