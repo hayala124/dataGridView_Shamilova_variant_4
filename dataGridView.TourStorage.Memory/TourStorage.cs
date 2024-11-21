@@ -5,7 +5,7 @@ using dataGridView.Contracts.Models;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dataGridView.TourStorage
+namespace dataGridView.TourStorage.Memory
 {
     /// <inheritdoc cref="ITourStorage"/>
     public class TourStorage : ITourStorage

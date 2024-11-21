@@ -2,7 +2,8 @@
 using dataGridView.TourManager;
 using System.Windows.Forms;
 using dataGridView.TourStorage;
-using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Extensions.Logging;
 
 namespace dataGridView_Shamilova_variant_4
 {
@@ -14,11 +15,14 @@ namespace dataGridView_Shamilova_variant_4
         [STAThread]
         static void Main()
         {
-            var factory = LoggerFactory.Create(builder => builder.AddDebug());
-            var logger = factory.CreateLogger(nameof(dataGridView_Shamilova_variant_4));
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            var serilogLogger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.Seq("http://localhost:5341", apiKey: "sKTu9ZLxtxTl4xe6SVDU")
+                .CreateLogger();
+            var logger = new SerilogLoggerFactory(serilogLogger).CreateLogger("dataGridView_Shamilova_variant_4");
 
             var storage = new TourStorage();
             var manager = new TourManager(storage, logger);

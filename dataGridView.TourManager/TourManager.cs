@@ -32,7 +32,7 @@ namespace dataGridView.TourManager
             stopwatch.Start();
             var result = await tourStorage.AddAsync(tour);
             stopwatch.Stop();
-            logger.LogInformation($"В {DateTime.Now} добавлен тур с id = {tour.Id} за {stopwatch.ElapsedMilliseconds} мс");
+            logger.LogInformation("Добавлен тур с id = {ID}. Payload {@Tour} за {milliseconds} мс", tour.Id, tour, stopwatch.ElapsedMilliseconds);
 
             return result;
         }
@@ -48,7 +48,8 @@ namespace dataGridView.TourManager
             var result = await tourStorage.DeleteAsync(id);
             stopwatch.Stop();
 
-            logger.LogInformation($"В {DateTime.Now} удалён тур с id = {id} за {stopwatch.ElapsedMilliseconds} мс");
+            logger.LogInformation("Удалён тур с id = {ID} за {milliseconds} мс", id, stopwatch.ElapsedMilliseconds);
+
 
             return result;
         }
@@ -63,7 +64,7 @@ namespace dataGridView.TourManager
             stopwatch.Start();
             var result = tourStorage.EditAsync(tour);
             stopwatch.Stop();
-            logger.LogInformation($"В {DateTime.Now} изменён тур с id = {tour.Id} за {stopwatch.ElapsedMilliseconds} мс");
+            logger.LogInformation("Изменён тур с id = {ID}. Payload {@Tour} за {milliseconds} мс", tour.Id, tour, stopwatch.ElapsedMilliseconds);
 
             return result;
         }

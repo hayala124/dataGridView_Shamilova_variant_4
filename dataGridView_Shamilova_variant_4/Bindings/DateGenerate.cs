@@ -3,7 +3,7 @@ using dataGridView.Contracts.Models;
  
 namespace dataGridView_Shamilova_variant_4.Bindings
 {
-    internal class DateGenerate
+    public class DateGenerate
     {
         /// <summary>
         /// Метод инициализирует новый экземпляр класса<see cref="Tour"/>
@@ -22,6 +22,7 @@ namespace dataGridView_Shamilova_variant_4.Bindings
                 Surcharges = 0,
             };
 
+            result.TotalCost = result.CostVacationer * result.NumberOfVacationer + result.Surcharges;
             settings?.Invoke(result);
 
             return result;
