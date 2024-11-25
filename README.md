@@ -4,4 +4,4 @@
 
 Предмет: Инструментальные средства разработки программного обеспечения
 
-Задание: dataGridView + NuGet + Logger + Seq&Serilog + Unit Tests
+Задание: dataGridView + NuGet + Logger + Seq&Serilog + Unit Tests + EF
