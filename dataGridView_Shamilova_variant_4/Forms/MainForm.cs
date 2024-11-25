@@ -14,7 +14,6 @@ namespace dataGridView_Shamilova_variant_4
     {
         private ITourManager tourManager;
         private BindingSource bindingSource;
-        //private TourManager manager;
 
         /// <summary>
         /// Инициализирует новый экземпляр <see cref="MainForm" />
@@ -30,10 +29,6 @@ namespace dataGridView_Shamilova_variant_4
             dataGridViewTours.DataSource = bindingSource;
         }
 
-        //public MainForm(TourManager manager)
-        //{
-        //    this.manager = manager;
-        //}
         private async void toolStripButtonAdd_Click(object sender, EventArgs e)
         {
             var tourForm = new TourForm();

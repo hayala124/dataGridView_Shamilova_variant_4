@@ -1,7 +1,7 @@
 ﻿using System;
 using dataGridView.TourManager;
 using System.Windows.Forms;
-using dataGridView.TourStorage;
+using dataGridView.Storage.DataBase;
 using Serilog;
 using Serilog.Extensions.Logging;
 
@@ -24,7 +24,7 @@ namespace dataGridView_Shamilova_variant_4
                 .CreateLogger();
             var logger = new SerilogLoggerFactory(serilogLogger).CreateLogger("dataGridView_Shamilova_variant_4");
 
-            var storage = new TourStorage();
+            var storage = new DataBaseTourStorage();
             var manager = new TourManager(storage, logger);
 
             Application.Run(new MainForm(manager));

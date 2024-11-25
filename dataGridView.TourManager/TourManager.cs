@@ -72,7 +72,13 @@ namespace dataGridView.TourManager
         /// <summary>
         /// Метод для возврата тура.
         /// </summary>
-        Task<IReadOnlyCollection<Tour>> ITourManager.GetAllAsync() => tourStorage.GetAllAsync();
+        
+        async Task <IReadOnlyCollection<Tour>> ITourManager.GetAllAsync()
+        {
+            var result = await tourStorage.GetAllAsync();
+
+            return result;
+        }
 
         /// <summary>
         /// Метод для возврата статистики о турах.
@@ -85,7 +91,7 @@ namespace dataGridView.TourManager
             {
                 tour.TotalCost = tour.CostVacationer * tour.NumberOfVacationer + tour.Surcharges;
             }
-
+            
             return new TourStatsModel
             {
                 TotalCountTours = result.Count,
